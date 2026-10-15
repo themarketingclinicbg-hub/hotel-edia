@@ -139,7 +139,7 @@ h2 em{font-style:italic;color:var(--gold)}
 
 /* ---------- SPA ---------- */
 .spa{background:var(--green-deep);color:#fff;position:relative;overflow:hidden}
-.spa::before{content:'';position:absolute;inset:0;background:url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/755714509.jpg?k=c75ae6b0c79a086d87d7713754f23398b50ec4e4ad307b7d344cf5f494ac7f5a') center/cover fixed;opacity:.07}
+.spa::before{content:'';position:absolute;inset:0;background:url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/755713664.jpg?k=9e40e32bfe9e7e2a7195a15798b13b924d05f0255fa099095f97aac12973c337')center/cover;opacity:.3}.spa::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,35,46,.78),rgba(9,35,46,.5) 50%,rgba(9,35,46,.82));pointer-events:none}.spa>.container{position:relative;z-index:1}
 .spa .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center;position:relative}
 .spa h2{color:#fff}
 .spa .lead{color:rgba(255,255,255,.7)}
@@ -154,36 +154,10 @@ h2 em{font-style:italic;color:var(--gold)}
 .sf p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7}
 
 /* ---------- RESTAURANT ---------- */
-.resto .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
-.resto .imgs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.resto .imgs img{object-fit:cover;width:100%;box-shadow:0 24px 50px rgba(7,29,39,.16);transition:transform .6s var(--ease)}
-.resto .imgs img:hover{transform:scale(1.03)}
-.resto .imgs img:first-child{aspect-ratio:3/4;margin-top:44px}
-.resto .imgs img:last-child{aspect-ratio:3/4}
-.menu-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px dashed #DDD5C2}
-.menu-line b{font-family:var(--serif);font-size:19px;color:var(--green);font-weight:600}
-.menu-line i{flex:1;border-bottom:1px dotted #C9C0A8;transform:translateY(-4px)}
-.menu-line span{font-family:var(--serif);font-size:19px;color:var(--gold);font-weight:700}
+.resto .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:96px;align-items:center}
 
 /* ---------- QUOTES ---------- */
 .quotes{background:var(--cream-2);position:relative}
-.qrating{display:flex;align-items:center;justify-content:center;gap:20px;margin:36px 0 56px;flex-wrap:wrap}
-.qrating i{display:block;width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft))}
-.qrating i:last-child{background:linear-gradient(90deg,var(--gold-soft),transparent)}
-.qrating span{font-family:var(--serif);font-size:15px;color:var(--green);letter-spacing:.02em;white-space:nowrap}
-.qrating span b{color:var(--gold);font-size:20px;font-weight:600}
-.qtriptych{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
-.qcard{position:relative;padding:34px 22px 0;text-align:center}
-.qcard::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:36px;height:1px;background:var(--gold)}
-.qcard:not(:last-child)::after{content:'';position:absolute;top:34px;right:-10px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,#DCD4BE 20%,#DCD4BE 80%,transparent)}
-.qmark{font-family:var(--serif);font-size:52px;color:var(--gold-soft);line-height:1;margin-bottom:4px}
-.qcard blockquote{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.75;color:var(--ink);margin-bottom:26px;min-height:112px}
-.qwho{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px}
-.qavatar{width:38px;height:38px;border-radius:50%;border:1px solid var(--gold-soft);background:var(--cream);color:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600;flex:none}
-.qwho div b{display:block;font-family:var(--serif);font-size:15px;color:var(--green)}
-.qwho div span{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:2px}
-.qstars{color:var(--gold);letter-spacing:4px;font-size:13px}
-@media(max-width:1024px){.qtriptych{grid-template-columns:1fr;gap:50px;max-width:460px;margin:0 auto}.qcard:not(:last-child)::after{display:none}}
 
 /* ---------- GALLERY ---------- */
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
@@ -207,7 +181,7 @@ h2 em{font-style:italic;color:var(--gold)}
 .banner h2{color:#fff;margin:16px 0 34px}
 
 /* ---------- FOOTER ---------- */
-footer{background:var(--green-deep);color:rgba(255,255,255,.65);padding:90px 0 0}
+footer{background:var(--green-deep);color:rgba(255,255,255,.65);padding:90px 0 0;position:relative;overflow:hidden;isolation:isolate}footer::before{content:'';position:absolute;inset:0;z-index:-2;background:url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/755712236.jpg?k=deb356c6f47788ce86098856c5857796d3a16431d68812a242349a53004cbc92') center/cover;opacity:.28}footer::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,35,46,.82),rgba(9,35,46,.92))}
 footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;padding-bottom:70px}
 footer h4{font-family:var(--serif);color:var(--gold-light);font-size:19px;margin-bottom:22px;font-weight:600}
 footer li{list-style:none;margin-bottom:12px;font-size:14px}
@@ -254,16 +228,8 @@ footer .bar{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;display:fl
 .marq:hover .track{animation-play-state:paused}
 .marq img{height:190px;width:auto;display:block}
 @keyframes marq{to{transform:translateX(-50%)}}
-.faq{max-width:820px;margin:56px auto 0}
-.fq{border-bottom:1px solid #E3DDCE}
-.fq .fqq{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;padding:24px 4px;cursor:pointer;font-family:var(--serif);font-size:22px;color:var(--green);font-weight:600}
-.fq .fqq:hover{color:var(--gold)}
-.fq .ar{font-family:var(--sans);font-weight:300;font-size:26px;color:var(--gold);transition:transform .45s var(--ease)}
-.fq.open .ar{transform:rotate(45deg)}
-.fq .a{max-height:0;overflow:hidden;transition:max-height .55s var(--ease),padding .4s;color:var(--muted);line-height:1.85;font-size:15px;padding:0 4px}
-.fq.open .a{max-height:220px;padding-bottom:26px}
 footer .giant{font-family:var(--serif);font-size:clamp(58px,11.5vw,180px);line-height:.85;text-align:center;letter-spacing:.1em;color:rgba(224,198,137,.06);user-select:none;pointer-events:none;margin-top:-10px;white-space:nowrap;overflow:hidden}
-@media(max-width:820px){.hero .wm{top:14%}.marq img{height:130px}.fq .q{font-size:18px}}
+@media(max-width:820px){.hero .wm{top:14%}.marq img{height:130px}}
 
 /* word-stagger heading reveal (StayGo) */
 h2 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
@@ -315,10 +281,7 @@ h2.in .w i{transform:none}
   .room-grid{grid-template-columns:1fr}
   .rooms .head{margin-bottom:36px}
   .spa-feats{grid-template-columns:1fr;gap:20px}
-  .resto .imgs img:first-child{margin-top:24px}
-  .menu-line b{font-size:16px}
 
-  .qtriptych{grid-template-columns:1fr;gap:40px}
 
   .gal-grid{grid-auto-rows:unset;gap:10px}
   .gal-grid a{aspect-ratio:1;grid-row:span 1!important;grid-column:span 1!important}
@@ -326,8 +289,6 @@ h2.in .w i{transform:none}
   .marq img{height:120px}
   .marq{margin-top:44px}
 
-  .fq .fqq{font-size:17px;padding:18px 2px}
-  .fq .a{font-size:14px}
   .banner{padding:100px 0;background-attachment:scroll}
   .spa::before{background-attachment:scroll}
 
@@ -357,6 +318,166 @@ nav.scrolled .brand .logo-txt>span{color:var(--gold)}
 .footer-logo{font-family:var(--serif);font-weight:600;font-size:42px;letter-spacing:.26em;color:#fff;margin-bottom:16px;text-indent:.26em}
 @media(max-width:820px){.brand .logo-txt b{font-size:23px}.brand .logo-txt>span{font-size:7.5px}}
 
+
+.faqsec{position:relative;background:radial-gradient(ellipse at 12% 0,rgba(201,164,92,.16),transparent 55%),linear-gradient(180deg,rgba(9,35,46,.9),rgba(12,48,64,.8) 55%,rgba(9,35,46,.92)),url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/755712280.jpg?k=0d4de7c15430ecdf807380fbfd6105521bf0394d417c6ac6da36c239faf750a0') center/cover;padding:110px 0!important;overflow:hidden}
+.faqsec::before{content:"";position:absolute;inset:20px;border:1px solid rgba(201,164,92,.22);pointer-events:none}
+.faqsec h2{color:#F8F5EE}.faqsec h2 em{color:var(--gold-light)}
+.fxo{display:flex;align-items:center;justify-content:center;gap:16px;margin:30px auto 0}
+.fxo::before,.fxo::after{content:"";width:110px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.fxo::after{transform:scaleX(-1)}
+.fxo i{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.fxw{display:grid;grid-template-columns:.78fr 1.5fr;gap:96px;margin-top:72px;align-items:start}
+.fxs{position:sticky;top:120px}
+.fxs p{color:rgba(248,245,238,.7);line-height:1.9;font-size:15px;margin-bottom:34px;max-width:340px}
+.fxc{margin-bottom:38px}
+.fxc button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;padding:16px 0;border-bottom:1px solid rgba(201,164,92,.18);cursor:pointer;font:500 12px 'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,245,238,.55);transition:color .35s,padding .45s var(--ease);position:relative}
+.fxc button span{font:400 11px var(--sans);letter-spacing:.1em;color:rgba(201,164,92,.7)}
+.fxc button::before{content:"";position:absolute;left:0;top:50%;width:0;height:1px;background:var(--gold);transition:width .45s var(--ease)}
+.fxc button:hover{color:#F8F5EE}
+.fxc button.on{color:var(--gold-light);padding-left:26px}
+.fxc button.on::before{width:16px}
+.fxc button:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+.fxh{position:relative;border:1px solid rgba(201,164,92,.4);background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));padding:32px 30px}
+.fxh::before,.fxh::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--gold)}
+.fxh::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.fxh::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.fxh small{display:block;font:500 10px 'Cinzel',serif;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.fxh a{display:block;font:500 28px var(--serif);color:#F8F5EE;text-decoration:none;line-height:1.5;letter-spacing:.02em;transition:color .3s}
+.fxh a:hover{color:var(--gold-light)}
+.fxh button{margin-top:22px}
+.fxl{position:relative;padding-left:34px}
+.fxp{position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(201,164,92,.22)}
+.fxp i{display:block;width:100%;height:0;background:linear-gradient(180deg,var(--gold-light),var(--gold));box-shadow:0 0 10px rgba(201,164,92,.6);transition:height .3s}
+.fxi{position:relative;border-bottom:1px solid rgba(201,164,92,.2);overflow:hidden}
+.js .fxi.hid{display:none}
+.fxi.pop{animation:fxp .7s var(--ease) both}
+@keyframes fxp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fxi::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(201,164,92,.1),transparent 70%);opacity:0;transition:opacity .5s;pointer-events:none}
+.fxi:hover::before,.fxi.open::before{opacity:1}
+.fxq{all:unset;box-sizing:border-box;position:relative;display:flex;align-items:center;gap:22px;width:100%;padding:30px 6px;cursor:pointer}
+.fxq:focus-visible{outline:1px solid var(--gold);outline-offset:-3px}
+.fxn{font:500 13px 'Cinzel',serif;letter-spacing:.16em;color:var(--gold);min-width:42px}
+.fxt{flex:1;font:500 26px var(--serif);color:#F8F5EE;line-height:1.3;transition:color .35s,transform .5s var(--ease)}
+.fxi:hover .fxt{transform:translateX(6px)}
+.fxi.open .fxt{color:var(--gold-light)}
+.fxg{flex:none;width:36px;height:36px;border:1px solid rgba(201,164,92,.45);border-radius:50%;position:relative;transition:background .4s,border-color .4s,transform .5s var(--ease)}
+.fxg::before,.fxg::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--gold-light);transform:translate(-50%,-50%);transition:background .3s}
+.fxg::after{transform:translate(-50%,-50%) rotate(90deg)}
+.fxi:hover .fxg{border-color:var(--gold)}
+.fxi.open .fxg{transform:rotate(135deg);background:var(--gold);border-color:var(--gold)}
+.fxi.open .fxg::before,.fxi.open .fxg::after{background:#09232E}
+.fxa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease);position:relative}
+.fxi.open .fxa{grid-template-rows:1fr}
+.fxa>div{overflow:hidden}
+.fxa p{color:rgba(248,245,238,.72);line-height:1.95;font-size:15.5px;padding:0 70px 8px 70px}
+.fxa .fxt2{display:inline-block;margin:8px 0 30px 70px;font:500 11px 'Cinzel',serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);border:0;border-bottom:1px solid var(--gold);padding:0 0 5px;text-decoration:none;cursor:pointer;background:none;transition:color .3s,letter-spacing .4s}
+.fxa .fxt2:hover{color:#fff;letter-spacing:.3em}
+@media(max-width:900px){.faqsec{padding:90px 0!important}.faqsec::before{inset:10px}.fxw{grid-template-columns:1fr;gap:44px;margin-top:48px}.fxs{position:static}.fxs p{max-width:none}.fxl{padding-left:18px}.fxt{font-size:21px}.fxq{padding:22px 2px;gap:14px}.fxn{min-width:34px}.fxa p{padding:0 6px 6px 48px}.fxa .fxt2{margin-left:48px}.fxh a{font-size:23px}.fxo::before,.fxo::after{width:60px}}
+@media(prefers-reduced-motion:reduce){.fxa,.fxi::before,.fxg,.fxt{transition:none}.fxi.pop{animation:none}}
+
+.hero h1{font-size:clamp(34px,5vw,60px)}
+h2{font-size:clamp(30px,3.6vw,46px)}
+h3,.room h3{font-size:22px}
+.hero p{font-size:15px}
+.lead{font-size:15px}
+.room .price b{font-size:24px}
+footer .giant{font-size:clamp(40px,8vw,110px)}
+.fxt{font-size:19px}.fxn{font-size:12px}.fxa p{font-size:14.5px;line-height:1.85}.fxh a{font-size:22px}.fxq{padding:24px 6px}
+@media(max-width:820px){.hero h1{font-size:clamp(30px,8.5vw,40px)}h2{font-size:clamp(26px,7.5vw,34px)}.fxt{font-size:17px}}
+
+.quotes{background:var(--cream-2);position:relative;overflow:hidden}
+.quotes::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 0,rgba(201,164,92,.18),transparent 55%),linear-gradient(rgba(241,236,224,.9),rgba(241,236,224,.95)),url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/755717097.jpg?k=cb2adb24dacc0f0ebc37319c39c9c03e4609f12c4027e0b56d77439bf2a43f01') center/cover;pointer-events:none}.quotes>.container{position:relative}
+.qx{position:relative;display:grid;grid-template-columns:.62fr 1.5fr;margin-top:64px;box-shadow:0 40px 80px rgba(9,35,46,.16)}
+.qx::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(201,164,92,.4);pointer-events:none}
+.qs{background:linear-gradient(165deg,#0E3545,#09232E);color:#fff;padding:54px 34px;text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+.qs::before{content:"";position:absolute;top:-80px;right:-80px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(201,164,92,.28),transparent 70%)}
+.qring{position:relative;width:150px;height:150px}
+.qring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.qring circle{fill:none;stroke-width:3}
+.qring .bg{stroke:rgba(201,164,92,.2)}
+.qring .fg{stroke:var(--gold);stroke-linecap:round;stroke-dasharray:314;stroke-dashoffset:314;filter:drop-shadow(0 0 6px rgba(201,164,92,.7));transition:stroke-dashoffset 2s var(--ease)}
+.qx.in .qring .fg{stroke-dashoffset:22}
+.qring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 46px var(--serif);color:var(--gold-light)}
+.qs h3{font:500 11px 'Cinzel',serif;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:26px 0 10px}
+.qs .st{color:var(--gold);letter-spacing:5px;font-size:13px}
+.qs p{font-size:12.5px;color:rgba(255,255,255,.7);margin:12px 0 0;letter-spacing:.04em}
+.qs .sub{margin-top:30px;padding-top:24px;border-top:1px solid rgba(201,164,92,.25);width:100%}
+.qs .sub b{display:block;font:500 28px var(--serif);color:#fff}
+.qs .sub span{font:500 10px 'Cinzel',serif;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.qm{background:#fff;padding:54px 64px 34px;position:relative;display:flex;flex-direction:column}
+.qmk{position:absolute;top:22px;left:44px;font:400 130px/1 var(--serif);color:rgba(201,164,92,.28);pointer-events:none}
+.qsl{display:grid;position:relative;flex:1}
+.qsl>figure{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease),visibility .7s;display:flex;flex-direction:column;justify-content:center}
+.qsl>figure.on{opacity:1;visibility:visible;transform:none}
+.qsl blockquote{font:italic 400 24px/1.6 var(--serif);color:var(--green-dark);margin:0 0 30px;padding-top:26px}
+.qwho{display:flex;align-items:center;gap:14px}
+.qav{width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font:600 18px var(--serif);color:var(--green);background:var(--cream)}
+.qwho b{display:block;font:600 18px var(--serif);color:var(--green)}
+.qwho span{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.qwho .stars{margin-left:auto;color:var(--gold);letter-spacing:4px;font-size:13px}
+
+@media(max-width:900px){.qx{grid-template-columns:1fr;margin-top:48px}.qx::before{inset:-8px}.qs{padding:40px 24px}.qm{padding:44px 26px 26px}.qmk{left:20px;font-size:100px}.qsl blockquote{font-size:19px}.qwho .stars{display:none}}
+@media(prefers-reduced-motion:reduce){.qsl>figure{transition:none}.qring .fg{transition:none}}
+
+.qtr{display:block;font-size:11px;color:var(--muted);letter-spacing:.06em;margin:-14px 0 24px;font-style:italic}
+.qsc{margin-left:auto;text-align:center;border:1px solid var(--gold);padding:6px 12px;background:var(--cream)}
+.qsc b{display:block;font:600 22px var(--serif);color:var(--green);line-height:1}
+.qsc small{font:500 8px 'Cinzel',serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.qctl{display:flex;align-items:center;gap:16px;margin-top:34px;padding-top:22px;border-top:1px solid #EFEAE0;position:relative}
+.qctl button{all:unset;box-sizing:border-box;width:38px;height:38px;border:1px solid rgba(201,164,92,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;font:300 24px/1 var(--serif);color:var(--green);cursor:pointer;transition:background .3s,color .3s}
+.qctl button:hover{background:var(--gold);color:#fff}
+.qctl button:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+.qcn{font:500 12px 'Cinzel',serif;letter-spacing:.2em;color:#9AA5A3}
+.qcn b{color:var(--green);font-weight:500}
+.qpg{flex:1;height:2px;background:#E7E1D2;position:relative;margin-left:8px}
+.qpg i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--gold)}
+.qmq{margin-top:84px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.qmt{display:flex;gap:56px;width:max-content;animation:qmq 70s linear infinite}
+.qmq:hover .qmt{animation-play-state:paused}
+.qmi{font:italic 400 19px var(--serif);color:var(--green-dark);white-space:nowrap}
+.qmi b{font:600 11px 'Cinzel',serif;font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-left:10px}
+.qmi i{font-style:normal;margin-left:4px}
+@keyframes qmq{to{transform:translateX(-50%)}}
+.qsrc{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:30px 0 0}
+@media(max-width:900px){.qmq{margin-top:56px}.qmi{font-size:16px}.qsc{padding:4px 8px}}
+@media(prefers-reduced-motion:reduce){.qmt{animation:none;flex-wrap:wrap;width:auto;gap:18px 40px;justify-content:center}}
+
+.rtl{border-top:1px solid rgba(201,164,92,.45)}
+.rti{border-bottom:1px solid rgba(201,164,92,.45);position:relative}
+.rti::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.rti.on::before{transform:scaleY(1)}
+.rtq{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:18px;padding:20px 8px 20px 20px;cursor:pointer}
+.rtq:focus-visible{outline:1px solid var(--gold);outline-offset:-3px}
+.rn{font:500 12px 'Cinzel',serif;letter-spacing:.16em;color:var(--gold);min-width:34px}
+.rtt{font:600 21px var(--serif);color:var(--green);transition:color .3s,transform .5s var(--ease)}
+.rti:hover .rtt{transform:translateX(5px)}
+.rts{margin-left:auto;font:italic 400 15px var(--serif);color:var(--gold);text-align:right}
+.rar{flex:none;width:9px;height:9px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg);transition:transform .4s var(--ease)}
+.rti.on .rar{transform:rotate(-135deg)}
+.rtd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.rti.on .rtd{grid-template-rows:1fr}
+.rtd>div{overflow:hidden}
+.rtd p{margin:0;padding:0 40px 22px 72px;font-size:14.5px;line-height:1.85;color:var(--muted)}
+.rinfo{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:30px;border:1px solid rgba(201,164,92,.45);background:#fff}
+.rinfo>div{padding:18px 22px}
+.rinfo>div+div{border-left:1px solid rgba(201,164,92,.45)}
+.rinfo small{display:block;font:500 9.5px 'Cinzel',serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.rinfo b,.rinfo a{font:600 19px var(--serif);color:var(--green);text-decoration:none}
+.rinfo a:hover{color:var(--gold)}
+.rbt{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:34px}
+.rmore{font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--green);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:5px;transition:color .3s,letter-spacing .4s}
+.rmore:hover{color:var(--gold);letter-spacing:.26em}
+.rst{position:relative;padding:0 22px 22px 0}
+.rst::before{content:"";position:absolute;top:22px;left:22px;right:0;bottom:0;border:1px solid var(--gold)}
+.rfr{position:relative;aspect-ratio:4/5;overflow:hidden;box-shadow:0 34px 70px rgba(9,35,46,.22);background:var(--green-deep)}
+.rfr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.1s var(--ease),transform 6s linear}
+.rfr img.on{opacity:1;transform:scale(1)}
+.rfr::after{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(transparent,rgba(9,35,46,.85));pointer-events:none}
+.rcap{position:absolute;left:28px;right:28px;bottom:24px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;color:#fff}
+.rcap span{font:500 22px var(--serif);letter-spacing:.02em}
+.rcap b{font:500 11px 'Cinzel',serif;letter-spacing:.24em;color:var(--gold-light)}
+@media(max-width:900px){.resto .grid{grid-template-columns:1fr;gap:56px}.rtt{font-size:18px}.rts{display:none}.rtd p{padding:0 14px 18px 56px}.rinfo>div{padding:14px 16px}.rst{padding:0 14px 14px 0}.rst::before{top:14px;left:14px}.rcap span{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.rfr img,.rtd,.rti::before{transition:none}}
 </style>
 </head>
 <body>
@@ -479,21 +600,16 @@ nav.scrolled .brand .logo-txt>span{color:var(--gold)}
 
 <section class="resto" id="resto">
   <div class="container grid">
-    <div>
+    <div class="rcol">
       <div class="sec-kicker rv">Ресторант ЕДИА</div>
       <h2 class="rv d1">Ароматът на <em>жарта</em></h2>
-      <p class="lead rv d2" style="margin:24px 0 30px">Ресторант ЕДИА предлага морски специалитети, локална кухня и ястия на грил, поднесени в модерна, традиционна и романтична атмосфера — в уютната зала или сред зеленината на лятната градина.</p>
-      <div class="rv d2">
-        <div class="menu-line"><b>Морски специалитети</b><i></i><span>à la carte</span></div>
-        <div class="menu-line"><b>Грил &amp; барбекю</b><i></i><span>на дървени въглища</span></div>
-        <div class="menu-line"><b>Закуска</b><i></i><span>включена</span></div>
-        <div class="menu-line"><b>Резервации</b><i></i><span>0746 3 23 00</span></div>
-      </div>
-      <div style="margin-top:38px" class="rv d3"><button class="btn" style="background:var(--green);color:#fff" onclick="openModal()">Резервирай маса</button></div>
+      <p class="lead rv d2" style="margin:22px 0 30px">Ресторант ЕДИА предлага морски специалитети, локална кухня и ястия на грил, поднесени в модерна, традиционна и романтична атмосфера — в уютната зала или сред зеленината на лятната градина.</p>
+      <div class="rtl rv d2" id="rtl"><div class="rti on"><button type="button" class="rtq" aria-expanded="true"><span class="rn">I</span><span class="rtt">Лятна градина</span><span class="rts">сред зеленината</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Маси сред зеленината на лятната градина, за обяд и вечеря на открито в топлите месеци.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">II</span><span class="rtt">Грил &amp; барбекю</span><span class="rts">на дървени въглища</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Ястия на грил и барбекю, приготвени на дървени въглища и поднесени на открито или в залата.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">III</span><span class="rtt">Вина и атмосфера</span><span class="rts">модерна и романтична</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Вина и шампанско към вечерята, в модерна, традиционна и романтична атмосфера.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">IV</span><span class="rtt">Морски специалитети</span><span class="rts">à la carte</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Свежа риба и морски дарове à la carte, представени във витрината на ресторанта.</p></div></div></div></div>
+      <div class="rinfo rv d3"><div><small>Закуска</small><b>включена, à la carte</b></div><div><small>Резервации</small><a href="tel:+359746323300">0746 3 23 00</a></div></div>
+      <div class="rbt rv d3"><button class="btn" style="background:var(--green);color:#fff" onclick="openModal()">Резервирай маса</button><a class="rmore" href="restoran.html">Научете повече за ресторанта</a></div>
     </div>
-    <div class="imgs rv d1">
-      <img class="irv" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/755712490.jpg?k=e603558b10edd12424fa3fcf5928a6e26d9c87f9237b38aa773038631d2a0d35" alt="Ресторант ЕДИА">
-      <img class="irv" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/36938207.jpg?k=3f13410df8ec81f2042402a3a92c43a776ebaf752cb2cbbd9e2124212994d216" alt="Морски специалитети">
+    <div class="rst rv d1" id="rst">
+      <div class="rfr"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/755712539.jpg?k=17ef96514233260b5058985e26f1c143291b4fda202ec5a976465fb69cd596b0" alt="Лятна градина" class="on"><img src="https://images.unsplash.com/photo-1583068156703-ab652b29794c?auto=format&fit=crop&w=1600&q=85" alt="Грил &amp; барбекю" loading="lazy"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/755712490.jpg?k=e603558b10edd12424fa3fcf5928a6e26d9c87f9237b38aa773038631d2a0d35" alt="Вина и атмосфера" loading="lazy"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/36938207.jpg?k=3f13410df8ec81f2042402a3a92c43a776ebaf752cb2cbbd9e2124212994d216" alt="Морски специалитети" loading="lazy"><div class="rcap"><span id="rcap">Лятна градина</span><b id="rcn">01 / 04</b></div></div>
     </div>
   </div>
 </section>
@@ -502,27 +618,12 @@ nav.scrolled .brand .logo-txt>span{color:var(--gold)}
   <div class="container">
     <div class="sec-kicker center rv">Гостите казват</div>
     <h2 class="rv d1" style="text-align:center">Впечатления, които <em>говорят сами</em></h2>
-    <div class="qrating rv d2"><i></i><span><b>9.3</b> Превъзходно &nbsp;&middot;&nbsp; ★★★★★ &nbsp;&middot;&nbsp; 388 отзива в Booking</span><i></i></div>
-    <div class="qtriptych">
-      <div class="qcard rv d1">
-        <div class="qmark">&bdquo;</div>
-        <blockquote>„Хотелът е изцяло реновиран и е абсолютно зашеметяващ &mdash; модерен, стилен и уютен. Собствениците и персоналът те карат да се чувстваш като у дома."</blockquote>
-        <div class="qwho"><div class="qavatar">A</div><div><b>Aniss</b><span>🇧🇬 България</span></div></div>
-        <div class="qstars">★★★★★</div>
-      </div>
-      <div class="qcard rv d2">
-        <div class="qmark">&bdquo;</div>
-        <blockquote>„Много добра закуска, перфектна локация, топъл открит басейн и безупречно обслужване."</blockquote>
-        <div class="qwho"><div class="qavatar">G</div><div><b>Grioannis</b><span>🇬🇷 Гърция</span></div></div>
-        <div class="qstars">★★★★★</div>
-      </div>
-      <div class="qcard rv d3">
-        <div class="qmark">&bdquo;</div>
-        <blockquote>„Локация, размер на стаите и чистота. Басейнът е много приятен, с минерална вода."</blockquote>
-        <div class="qwho"><div class="qavatar">M</div><div><b>Mihaela</b><span>🇷🇴 Румъния</span></div></div>
-        <div class="qstars">★★★★★</div>
-      </div>
+    <div class="qx rv d2" id="qx">
+      <aside class="qs"><div class="qring"><svg viewBox="0 0 110 110" aria-hidden="true"><circle class="bg" cx="55" cy="55" r="50"/><circle class="fg" cx="55" cy="55" r="50"/></svg><b>9.3</b></div><h3>Превъзходно</h3><div class="st" aria-label="5 звезди">★★★★★</div><p>388 отзива в Booking</p><div class="sub"><b>9.4</b><span>Персонал</span></div></aside>
+      <div class="qm"><div class="qmk" aria-hidden="true">&ldquo;</div><div class="qsl" aria-live="polite"><figure class="on"><blockquote>„Страхотен, наскоро обзаведен хотел с топъл минерален басейн навън. Вътре има и парна баня, и сауна. Храната също беше вкусна! Местоположението е в горната част на града, над парка, и се чувстваш като в гората — супер релаксиращо."</blockquote><div class="qwho"><div class="qav">V</div><div><b>Viliana</b><span>🇧🇬 България · окт. 2026 · Двойка</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Прекарахме прекрасен престой в този красив хотел. Ресторантът също беше отличен, а персоналът беше изключително дружелюбен, гостоприемен и внимателен. Много се насладихме и определено ще се върнем. Горещо препоръчвам!"</blockquote><div class="qwho"><div class="qav">V</div><div><b>Viktoriya</b><span>🇧🇬 България · септ. 2026 · Самостоятелен</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Стаята беше перфектна и наистина уютна. Усещаше се спокойствие и като у дома. Закуската беше вкусна, а персоналът е много любезен."</blockquote><div class="qwho"><div class="qav">K</div><div><b>Konstantin</b><span>🇧🇬 България · септ. 2026 · Самостоятелен</span></div><div class="qsc"><b>9.0</b><small>Booking</small></div></div></figure><figure><blockquote>„Много добра стая и баня, невероятна тераса и гледка. Басейнът и ресторантът са много хубави!"</blockquote><div class="qwho"><div class="qav">M</div><div><b>MichaelaMia</b><span>🇧🇬 България · септ. 2026 · Самостоятелен</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Много големи стаи, прозорците на хола се отварят директно към басейна. Хубава спирка за една нощ по пътя към Гърция."</blockquote><small class="qtr">Преведено от английски</small><div class="qwho"><div class="qav">O</div><div><b>Oana</b><span>🇷🇴 Румъния · авг. 2026 · Самостоятелен</span></div><div class="qsc"><b>8.0</b><small>Booking</small></div></div></figure><figure><blockquote>„…Стаята е просторна и чиста. Персоналът е много любезен и съдейства при нужда."</blockquote><div class="qwho"><div class="qav">P</div><div><b>Petya</b><span>🇧🇬 България · авг. 2026 · Семейство</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Всичко беше перфектно и релаксиращо! Стаята беше чиста и голяма, с чудесна гледка, закуската беше вкусна, а външното пространство — красиво. Повечето от персонала говореше само български, но наистина се опитаха да ни помогнат с всичко. Ще се върна отново!"</blockquote><small class="qtr">Преведено от английски</small><div class="qwho"><div class="qav">M</div><div><b>Maria</b><span>🇬🇷 Гърция · яну. 2026 · Двойка</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Хотелът е изцяло реновиран и е абсолютно зашеметяващ — модерен, стилен и уютен. Собствениците и персоналът те карат да се чувстваш като у дома. Ресторантът е изключителен, СПА центърът е страхотен, а външният басейн с топла минерална вода е перфектното допълнение. Идеален хотел за семейна почивка."</blockquote><div class="qwho"><div class="qav">A</div><div><b>Aniss</b><span>🇧🇬 България · окт. 2025 · Семейство</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Локация, размер на стаите и чистота. Басейнът е много приятен, с термална вода."</blockquote><small class="qtr">Преведено от английски</small><div class="qwho"><div class="qav">M</div><div><b>Mihaela</b><span>🇷🇴 Румъния · септ. 2025 · Група</span></div><div class="qsc"><b>9.0</b><small>Booking</small></div></div></figure><figure><blockquote>„Апартаментът беше просторен и много чист. Вкусна храна — баща ми е много претенциозен в яденето и дори той беше впечатлен. Изключителен персонал: особено дамата на рецепцията направи всичко възможно престоят ни да е приятен. На разстояние за разходка от града, в тиха зона."</blockquote><small class="qtr">Преведено от английски</small><div class="qwho"><div class="qav">E</div><div><b>Elitsa</b><span>🇬🇧 Великобритания · септ. 2025 · Семейство</span></div><div class="qsc"><b>9.0</b><small>Booking</small></div></div></figure><figure><blockquote>„Много хубаво място с много растения. Външният басейн беше перфектен, чист и не претъпкан. Персоналът беше дружелюбен и отзивчив. Прекарахме много добра седмица и със сигурност ще се върнем догодина. Рецепционистката беше изключително отзивчива и смени стаята ни без никакъв проблем."</blockquote><small class="qtr">Преведено от английски</small><div class="qwho"><div class="qav">R</div><div><b>Rositsa</b><span>🇹🇷 Турция · май 2024 · Семейство</span></div><div class="qsc"><b>10</b><small>Booking</small></div></div></figure><figure><blockquote>„Много добра закуска, перфектна локация, топъл открит басейн и безупречно обслужване."</blockquote><div class="qwho"><div class="qav">G</div><div><b>Grioannis</b><span>🇬🇷 Гърция</span></div><div class="qsc"><b>★</b><small>Booking</small></div></div></figure></div><div class="qctl"><button type="button" class="qpv" aria-label="Предишен отзив">&lsaquo;</button><span class="qcn"><b id="qc">01</b> / 12</span><button type="button" class="qnx" aria-label="Следващ отзив">&rsaquo;</button><div class="qpg"><i id="qpb"></i></div></div></div>
     </div>
+    <div class="qmq rv d3" aria-label="Още отзиви от Booking"><div class="qmt"><span class="qmi">„Басейнът и ресторантът са много хубави!" <b>MichaelaMia</b> <i>🇧🇬</i></span><span class="qmi">„Стаята е просторна и чиста." <b>Petya</b> <i>🇧🇬</i></span><span class="qmi">„Чувстваш се като в гората — супер релаксиращо." <b>Viliana</b> <i>🇧🇬</i></span><span class="qmi">„Персоналът е много любезен." <b>Konstantin</b> <i>🇧🇬</i></span><span class="qmi">„Вкусна храна и изключителен персонал." <b>Elitsa</b> <i>🇬🇧</i></span><span class="qmi">„Перфектен, чист и не претъпкан басейн." <b>Rositsa</b> <i>🇹🇷</i></span><span class="qmi">„Всичко беше перфектно и релаксиращо!" <b>Maria</b> <i>🇬🇷</i></span><span class="qmi">„Локация, размер на стаите и чистота." <b>Mihaela</b> <i>🇷🇴</i></span><span class="qmi">„Горещо препоръчвам!" <b>Viktoriya</b> <i>🇧🇬</i></span><span class="qmi">„Идеален хотел за семейна почивка." <b>Aniss</b> <i>🇧🇬</i></span><span class="qmi">„Басейнът и ресторантът са много хубави!" <b>MichaelaMia</b> <i>🇧🇬</i></span><span class="qmi">„Стаята е просторна и чиста." <b>Petya</b> <i>🇧🇬</i></span><span class="qmi">„Чувстваш се като в гората — супер релаксиращо." <b>Viliana</b> <i>🇧🇬</i></span><span class="qmi">„Персоналът е много любезен." <b>Konstantin</b> <i>🇧🇬</i></span><span class="qmi">„Вкусна храна и изключителен персонал." <b>Elitsa</b> <i>🇬🇧</i></span><span class="qmi">„Перфектен, чист и не претъпкан басейн." <b>Rositsa</b> <i>🇹🇷</i></span><span class="qmi">„Всичко беше перфектно и релаксиращо!" <b>Maria</b> <i>🇬🇷</i></span><span class="qmi">„Локация, размер на стаите и чистота." <b>Mihaela</b> <i>🇷🇴</i></span><span class="qmi">„Горещо препоръчвам!" <b>Viktoriya</b> <i>🇧🇬</i></span><span class="qmi">„Идеален хотел за семейна почивка." <b>Aniss</b> <i>🇧🇬</i></span></div></div>
+    <p class="qsrc rv d3">Оригинални отзиви от гости, публикувани в Booking.com</p>
   </div>
 </section>
 
@@ -542,17 +643,45 @@ nav.scrolled .brand .logo-txt>span{color:var(--gold)}
   </div>
 </section>
 
-<section class="faqsec" style="padding-top:0">
+<section class="faqsec" id="faq" style="padding-top:0">
   <div class="container">
     <div class="sec-kicker center rv">Въпроси и отговори</div>
     <h2 class="rv d1" style="text-align:center">Тук сме, за да <em>помогнем</em></h2>
-    <div class="faq rv d2">
-      <div class="fq open"><button class="fqq">Как мога да направя резервация?<span class="ar">+</span></button><div class="a">Чрез формата за резервация на сайта или на телефон 0746 3 23 00 · 0887 33 34 44. Ще потвърдим наличността веднага след запитването ви.</div></div>
-      <div class="fq"><button class="fqq">Отворен ли е басейнът?<span class="ar">+</span></button><div class="a">Да. Топлият открит басейн с минерална вода е на разположение на гостите целогодишно.</div></div>
-      <div class="fq"><button class="fqq">Какво включва спа центърът?<span class="ar">+</span></button><div class="a">Сауна, парна баня и професионални масажи. Топлият минерален басейн е на открито, до градината.</div></div>
-      <div class="fq"><button class="fqq">Има ли безплатен паркинг?<span class="ar">+</span></button><div class="a">Да, хотелът предлага безплатен частен паркинг на място за всички гости.</div></div>
-      <div class="fq"><button class="fqq">Къде се намира хотелът?<span class="ar">+</span></button><div class="a">Околовръстен път №10, 2800 Сандански — в спа зоната на града, до река Санданска Бистрица. На 2.6 км от Епископската базилика.</div></div>
-      <div class="fq"><button class="fqq">Какви са часовете за настаняване?<span class="ar">+</span></button><div class="a">Настаняване от 14:00 до 22:00 ч. Напускане до 12:00 ч. Закуската е включена.</div></div>
+    <div class="fxo rv d2" aria-hidden="true"><i></i></div>
+    <div class="fxw">
+      <div class="fxs rv d2">
+        <p>Всичко, което гостите ни питат най-често, на едно място. Изберете тема и отворете въпрос.</p>
+        <div class="fxc" role="group" aria-label="Тема"><button type="button" class="on" data-f="r">Резервации<span>7</span></button><button type="button" data-f="s">Спа и басейн<span>6</span></button><button type="button" data-f="n">Настаняване и храна<span>7</span></button><button type="button" data-f="h">Хотелът<span>6</span></button></div>
+        <div class="fxh"><small>Не намирате отговор?</small><a href="tel:+359746323300">0746 3 23 00</a><a href="tel:+359887333444">0887 33 34 44</a><button type="button" class="btn btn-gold" onclick="openModal()">Резервирайте престой</button></div>
+      </div>
+      <div class="fxl rv d3"><div class="fxp" aria-hidden="true"><i id="fxbar"></i></div>
+<div class="fxi open" data-c="r"><button class="fxq" aria-expanded="true"><span class="fxn">I</span><span class="fxt">Как мога да направя резервация?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Чрез формата за резервация на сайта или на телефон 0746 3 23 00 · 0887 33 34 44. Ще потвърдим наличността веднага след запитването ви.</p><button type="button" class="fxt2" onclick="openModal()">Резервирай онлайн</button></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">II</span><span class="fxt">Мога ли да изпратя запитване онлайн?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да. Изберете дати, тип стая и брой гости във формата за резервация и изпратете запитването. Нашият екип ще се свърже с вас за потвърждение възможно най-скоро.</p><button type="button" class="fxt2" onclick="openModal()">Изпрати запитване</button></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">III</span><span class="fxt">Какви стаи предлагате?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Имаме 7 типа стаи и апартаменти, сред които двойна стая с балкон, апартамент с две спални, джуниър суит и делукс апартамент. Стаите са просторни, с балкон или тераса и гледка към градината и басейна.</p><a class="fxt2" href="#rooms">Виж стаите</a></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">IV</span><span class="fxt">Коя е най-търсената стая?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Двойната стая с балкон: голямо двойно легло, климатик и балкон с гледка към градината или басейна, за двама гости.</p><a class="fxt2" href="#rooms">Виж стаите</a></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">V</span><span class="fxt">Коя стая е подходяща за романтичен престой?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Джуниър сюитът. Има голямо двойно легло, луксозна баня, балкон и елегантен дизайн, създаден за двама.</p><button type="button" class="fxt2" onclick="openModal()">Резервирай сюит</button></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">VI</span><span class="fxt">Мога ли да резервирам за повече от двама гости?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да. Апартаментът с две спални има хол и тераса и приема 4 и повече гости. Във формата за резервация можете да посочите броя на възрастните и децата.</p><button type="button" class="fxt2" onclick="openModal()">Резервирай апартамент</button></div></div></div>
+<div class="fxi" data-c="r"><button class="fxq" aria-expanded="false"><span class="fxn">VII</span><span class="fxt">Как ще разбера, че резервацията ми е потвърдена?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>След като изпратите запитването, нашият екип се свързва с вас по телефона или имейла, които сте посочили, за да потвърди наличността и детайлите на престоя.</p></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">I</span><span class="fxt">Отворен ли е басейнът?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да. Топлият открит басейн с минерална вода е на разположение на гостите целогодишно, така че можете да се наслаждавате на водата във всеки сезон.</p></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">II</span><span class="fxt">Какво включва спа центърът?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Сауна, парна баня и професионални масажи. Топлият минерален басейн е на открито, до градината.</p><a class="fxt2" href="#spa">Към спа центъра</a></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">III</span><span class="fxt">Каква е водата в басейна?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Топла минерална вода, в открит басейн, който работи през цялата година. Гостите често я споменават в отзивите си като особено приятна.</p></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">IV</span><span class="fxt">Какво дават сауната и парната баня?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Сауната е за дълбока детоксикация и презареждане на тялото, а меката пара на парната баня освобождава напрежението след дългия ден.</p></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">V</span><span class="fxt">Предлагате ли масажи?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, професионални масажи и ритуали, съобразени с вашите нужди и настроение.</p><button type="button" class="fxt2" onclick="openModal()">Запази спа ритуал</button></div></div></div>
+<div class="fxi hid" data-c="s"><button class="fxq" aria-expanded="false"><span class="fxn">VI</span><span class="fxt">Как мога да запазя спа ритуал?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Изпратете запитване през формата за резервация или се обадете на 0746 3 23 00 · 0887 33 34 44 и ще уговорим удобен за вас час.</p><button type="button" class="fxt2" onclick="openModal()">Запази спа ритуал</button></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">I</span><span class="fxt">Какви са часовете за настаняване?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Настаняване от 14:00 до 22:00 ч. Напускане до 12:00 ч. Закуската е включена.</p></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">II</span><span class="fxt">Мога ли да пристигна късно вечерта?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Настаняването е възможно до 22:00 ч. Ако ще пристигнете по-късно, свържете се с нас предварително на 0746 3 23 00 · 0887 33 34 44.</p></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">III</span><span class="fxt">Включена ли е закуската?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, закуската е включена в престоя. Гостите я оценяват високо в отзивите си в Booking.</p></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">IV</span><span class="fxt">Има ли ресторант в хотела?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, ресторант ЕДИА предлага морски специалитети, локална кухня и ястия на грил на дървени въглища, в уютната зала или в лятната градина.</p><a class="fxt2" href="#resto">Към ресторанта</a></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">V</span><span class="fxt">Как мога да резервирам маса?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Обадете се на 0746 3 23 00 и ще ви запазим маса в ресторанта.</p></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">VI</span><span class="fxt">Предлагате ли морски специалитети и грил?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да. Менюто съчетава морски специалитети à la carte с ястия на грил и барбекю на дървени въглища.</p></div></div></div>
+<div class="fxi hid" data-c="n"><button class="fxq" aria-expanded="false"><span class="fxn">VII</span><span class="fxt">Има ли безплатен паркинг?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, хотелът предлага безплатен частен паркинг на място за всички гости.</p></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">I</span><span class="fxt">Подходящ ли е хотелът за семейства?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, EDIA е семеен хотел. За семейства е създаден апартаментът с две спални и хол, който приема 4 и повече гости. При резервация можете да посочите и броя на децата.</p><button type="button" class="fxt2" onclick="openModal()">Резервирай за семейството</button></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">II</span><span class="fxt">Какви са оценките на гостите?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>9.3 от 388 отзива в Booking, като персоналът е оценен с 9.4. Гостите често отбелязват чистотата, локацията и топлия минерален басейн.</p></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">III</span><span class="fxt">Реновиран ли е хотелът?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Да, хотелът е изцяло реновиран, модерен и уютен. Гостите го описват като зашеметяващ и казват, че собствениците и персоналът ги карат да се чувстват като у дома.</p></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">IV</span><span class="fxt">Кои са любимите неща на гостите?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Най-често се споменават добрата закуска, перфектната локация, топлият открит басейн, чистотата, размерът на стаите и безупречното обслужване.</p></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">V</span><span class="fxt">Къде се намира хотелът?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Околовръстен път №10, 2800 Сандански, в спа зоната на града, до река Санданска Бистрица. На 2.6 км от Епископската базилика.</p><a class="fxt2" href="#contact">Виж контактите</a></div></div></div>
+<div class="fxi hid" data-c="h"><button class="fxq" aria-expanded="false"><span class="fxn">VI</span><span class="fxt">Далече ли е от центъра на Сандански?</span><span class="fxg" aria-hidden="true"></span></button><div class="fxa"><div><p>Не, хотелът е на минути от центъра на Сандански, а в същото време е в спокойната спа зона на града, до реката.</p></div></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -715,13 +844,30 @@ if(rvl){
   },{passive:true});
 }
 
-// FAQ accordion
-document.querySelectorAll('.fq .fqq').forEach(btn=>btn.addEventListener('click',()=>{
-  const fq=btn.parentNode,was=fq.classList.contains('open');
-  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));
-  if(!was)fq.classList.add('open');
-}));
+// FAQ
+(function(){const L=document.querySelector('.fxl');if(!L)return;const it=[].slice.call(L.querySelectorAll('.fxi')),bar=document.getElementById('fxbar'),ch=document.querySelectorAll('.fxc button');
+function prog(){const r=L.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight*.5-r.top)/r.height));bar.style.height=p*100+'%'}
+it.forEach(i=>{const q=i.querySelector('.fxq');q.addEventListener('click',()=>{const was=i.classList.contains('open');it.forEach(x=>{x.classList.remove('open');x.querySelector('.fxq').setAttribute('aria-expanded','false')});if(!was){i.classList.add('open');q.setAttribute('aria-expanded','true')}})});
+ch.forEach(b=>b.addEventListener('click',()=>{ch.forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;let n=0,first=null;it.forEach(i=>{const s=i.dataset.c===f;i.classList.toggle('hid',!s);i.classList.remove('pop');i.classList.remove('open');i.querySelector('.fxq').setAttribute('aria-expanded','false');if(s){void i.offsetWidth;i.style.animationDelay=(n*.07)+'s';i.classList.add('pop');n++;if(!first)first=i}});if(first){first.classList.add('open');first.querySelector('.fxq').setAttribute('aria-expanded','true')}prog()}));
+addEventListener('scroll',prog,{passive:true});prog();})();
 
+
+// Reviews
+(function(){const x=document.getElementById('qx');if(!x)return;const f=[].slice.call(x.querySelectorAll('.qsl figure')),c=document.getElementById('qc'),pb=document.getElementById('qpb'),D=8000;let k=0,t,s=0;
+function show(i){k=(i+f.length)%f.length;f.forEach((e,j)=>e.classList.toggle('on',j===k));c.textContent=String(k+1).padStart(2,'0');run()}
+function run(){clearTimeout(t);cancelAnimationFrame(s);pb.style.width='0';if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const a=performance.now();(function p(n){const r=Math.min((n-a)/D,1);pb.style.width=r*100+'%';if(r<1)s=requestAnimationFrame(p);else show(k+1)})(a)}
+x.querySelector('.qnx').addEventListener('click',()=>show(k+1));x.querySelector('.qpv').addEventListener('click',()=>show(k-1));
+let hov=false;x.addEventListener('mouseenter',()=>{hov=true;clearTimeout(t);cancelAnimationFrame(s)});x.addEventListener('mouseleave',()=>{hov=false;show(k)});
+if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){x.classList.add('in');o.disconnect()}},{threshold:.35}).observe(x)}else x.classList.add('in');
+show(0);})();
+
+// Restaurant
+(function(){const L=document.getElementById('rtl');if(!L)return;const it=[].slice.call(L.querySelectorAll('.rti')),im=[].slice.call(document.querySelectorAll('#rst .rfr img')),cap=document.getElementById('rcap'),cn=document.getElementById('rcn');let k=0,t,stop=false;
+function show(i){k=i;it.forEach((e,j)=>{e.classList.toggle('on',j===i);e.querySelector('.rtq').setAttribute('aria-expanded',j===i)});im.forEach((e,j)=>e.classList.toggle('on',j===i));cap.textContent=it[i].querySelector('.rtt').textContent;cn.textContent='0'+(i+1)+' / 0'+it.length}
+function run(){clearTimeout(t);if(stop||matchMedia('(prefers-reduced-motion:reduce)').matches)return;t=setTimeout(()=>{show((k+1)%it.length);run()},5500)}
+it.forEach((e,j)=>e.querySelector('.rtq').addEventListener('click',()=>{stop=true;clearTimeout(t);show(j)}));
+if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){o.disconnect();run()}},{threshold:.4}).observe(L)}
+})();
 </script>
 </body>
 </html>
