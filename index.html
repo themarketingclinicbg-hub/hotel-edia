@@ -478,6 +478,24 @@ footer .giant{font-size:clamp(40px,8vw,110px)}
 .rcap b{font:500 11px 'Cinzel',serif;letter-spacing:.24em;color:var(--gold-light)}
 @media(max-width:900px){.resto .grid{grid-template-columns:1fr;gap:56px}.rtt{font-size:18px}.rts{display:none}.rtd p{padding:0 14px 18px 56px}.rinfo>div{padding:14px 16px}.rst{padding:0 14px 14px 0}.rst::before{top:14px;left:14px}.rcap span{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.rfr img,.rtd,.rti::before{transition:none}}
+/* reservation modal */
+#rm{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.5s var(--ease)}
+#rm.on{opacity:1;visibility:visible}
+#rm .ovl{position:absolute;inset:0;background:rgba(7,29,39,.8);backdrop-filter:blur(6px)}
+#rm .card{position:relative;background:var(--cream);width:min(580px,100%);max-height:92vh;overflow:auto;padding:50px;transform:translateY(40px) scale(.97);transition:.55s var(--ease);border-top:4px solid var(--gold)}
+#rm.on .card{transform:none}
+#rm .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--muted)}
+#rm h3{font-size:32px;color:var(--green);font-weight:600;margin-bottom:6px}
+#rm .sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.frm textarea{width:100%;padding:14px 16px;border:1px solid #DDD5C2;background:#fff;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:.3s;resize:vertical}
+.frm textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,161,77,.15)}
+.zn{display:flex;gap:10px;flex-wrap:wrap}.zn label{flex:1;min-width:110px;margin:0;cursor:pointer}
+.zn input{padding:0;position:absolute;opacity:0;width:0;height:0}.zn span{display:block;text-align:center;padding:13px 8px;border:1px solid #DDD5C2;background:#fff;font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);transition:.3s}
+.zn input:checked+span{background:var(--green);color:#fff;border-color:var(--green)}
+#rsu{text-align:center;display:none;padding:30px 0}
+#rsu .ok{width:84px;height:84px;border-radius:50%;background:var(--green);color:var(--gold-light);font-size:38px;display:flex;align-items:center;justify-content:center;margin:0 auto 26px;animation:pop .6s var(--ease)}
+#rsu p{color:var(--muted);font-size:14px;line-height:1.8}
+@media(max-width:600px){#rm .card{padding:34px 22px}#rm h3{font-size:26px}.frm{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -606,7 +624,7 @@ footer .giant{font-size:clamp(40px,8vw,110px)}
       <p class="lead rv d2" style="margin:22px 0 30px">Ресторант ЕДИА предлага морски специалитети, локална кухня и ястия на грил, поднесени в модерна, традиционна и романтична атмосфера — в уютната зала или сред зеленината на лятната градина.</p>
       <div class="rtl rv d2" id="rtl"><div class="rti on"><button type="button" class="rtq" aria-expanded="true"><span class="rn">I</span><span class="rtt">Лятна градина</span><span class="rts">сред зеленината</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Маси сред зеленината на лятната градина, за обяд и вечеря на открито в топлите месеци.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">II</span><span class="rtt">Грил &amp; барбекю</span><span class="rts">на дървени въглища</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Ястия на грил и барбекю, приготвени на дървени въглища и поднесени на открито или в залата.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">III</span><span class="rtt">Вина и атмосфера</span><span class="rts">модерна и романтична</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Вина и шампанско към вечерята, в модерна, традиционна и романтична атмосфера.</p></div></div></div><div class="rti"><button type="button" class="rtq" aria-expanded="false"><span class="rn">IV</span><span class="rtt">Морски специалитети</span><span class="rts">à la carte</span><span class="rar" aria-hidden="true"></span></button><div class="rtd"><div><p>Свежа риба и морски дарове à la carte, представени във витрината на ресторанта.</p></div></div></div></div>
       <div class="rinfo rv d3"><div><small>Закуска</small><b>включена, à la carte</b></div><div><small>Резервации</small><a href="tel:+359746323300">0746 3 23 00</a></div></div>
-      <div class="rbt rv d3"><button class="btn" style="background:var(--green);color:#fff" onclick="openModal()">Резервирай маса</button><a class="rmore" href="restoran.html">Научете повече за ресторанта</a></div>
+      <div class="rbt rv d3"><button type="button" class="btn" style="background:var(--green);color:#fff" onclick="openRes()">Резервирай маса</button><a class="rmore" href="restoran.html">Научете повече за ресторанта</a></div>
     </div>
     <div class="rst rv d1" id="rst">
       <div class="rfr"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/755712539.jpg?k=17ef96514233260b5058985e26f1c143291b4fda202ec5a976465fb69cd596b0" alt="Лятна градина" class="on"><img src="https://images.unsplash.com/photo-1583068156703-ab652b29794c?auto=format&fit=crop&w=1600&q=85" alt="Грил &amp; барбекю" loading="lazy"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/755712490.jpg?k=e603558b10edd12424fa3fcf5928a6e26d9c87f9237b38aa773038631d2a0d35" alt="Вина и атмосфера" loading="lazy"><img src="https://cf.bstatic.com/xdata/images/hotel/max1920x1080/36938207.jpg?k=3f13410df8ec81f2042402a3a92c43a776ebaf752cb2cbbd9e2124212994d216" alt="Морски специалитети" loading="lazy"><div class="rcap"><span id="rcap">Лятна градина</span><b id="rcn">01 / 04</b></div></div>
@@ -868,6 +886,29 @@ function run(){clearTimeout(t);if(stop||matchMedia('(prefers-reduced-motion:redu
 it.forEach((e,j)=>e.querySelector('.rtq').addEventListener('click',()=>{stop=true;clearTimeout(t);show(j)}));
 if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){o.disconnect();run()}},{threshold:.4}).observe(L)}
 })();
+</script>
+<div id="rm"><div class="ovl" onclick="closeRes()"></div><div class="card">
+<button class="x" onclick="closeRes()" aria-label="Затвори">&#10005;</button>
+<div id="rfw"><h3>Резервация на маса</h3><p class="sub">Изпратете запитване и ще го потвърдим по телефон или имейл.</p>
+<form class="frm" id="rf">
+<div><label>Дата</label><input type="date" id="rdt" required></div>
+<div><label>Час</label><input type="time" required></div>
+<div><label>Брой гости</label><select><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>Над 10</option></select></div>
+<div><label>Повод</label><select><option>Обикновена вечеря</option><option>Романтична вечеря</option><option>Рожден ден</option><option>Семейно събиране</option><option>Бизнес вечеря</option></select></div>
+<div class="full"><label>Къде желаете да седнете</label><div class="zn"><label><input type="radio" name="z" checked><span>Без предпочитание</span></label><label><input type="radio" name="z"><span>Зала</span></label><label><input type="radio" name="z"><span>Лятна градина</span></label></div></div>
+<div class="full"><label>Име и фамилия</label><input type="text" placeholder="Иван Иванов" required></div>
+<div><label>Телефон</label><input type="tel" placeholder="+359 ..." required></div>
+<div><label>Имейл</label><input type="email" placeholder="ivan@mail.bg"></div>
+<div class="full"><label>Забележки (по желание)</label><textarea rows="2" placeholder="Алергии, детски стол, специално желание..."></textarea></div>
+<button class="btn btn-gold" type="submit">Изпрати запитване</button></form></div>
+<div id="rsu"><div class="ok">&#10003;</div><h3>Благодарим ви!</h3><p>Запитването за маса е изпратено.<br>Ще се свържем с вас за потвърждение възможно най-скоро.</p><button class="btn btn-gold" style="margin-top:26px" onclick="closeRes()">Затвори</button></div>
+</div></div>
+<script>
+var rm=document.getElementById("rm");
+function openRes(){document.getElementById("rfw").style.display="block";document.getElementById("rsu").style.display="none";document.getElementById("rdt").min=new Date().toISOString().slice(0,10);rm.classList.add("on");document.body.style.overflow="hidden"}
+function closeRes(){rm.classList.remove("on");document.body.style.overflow=""}
+document.getElementById("rf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block"});
+addEventListener("keydown",function(e){if(e.key==="Escape")closeRes()});
 </script>
 </body>
 </html>
