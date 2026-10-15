@@ -263,19 +263,42 @@ body{font-size:16px}
 .cr{position:absolute;width:11%;aspect-ratio:1;z-index:3;background:linear-gradient(135deg,#8c6a2a,#f5dd92 40%,#b8893a 70%,#e9cf83);filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
 .cr.a{top:0;left:0;clip-path:polygon(0 0,100% 0,0 100%)}.cr.b{top:0;right:0;clip-path:polygon(0 0,100% 0,100% 100%)}.cr.c{bottom:0;left:0;clip-path:polygon(0 0,0 100%,100% 100%)}.cr.d{bottom:0;right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
 .bk{--pw:min(400px,42vw)}
+
+/* reservation modal */
+#rm{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.5s var(--ease)}
+#rm.on{opacity:1;visibility:visible}
+#rm .ovl{position:absolute;inset:0;background:rgba(7,29,39,.8);backdrop-filter:blur(6px)}
+#rm .card{position:relative;background:var(--cream);width:min(580px,100%);max-height:92vh;overflow:auto;padding:50px;transform:translateY(40px) scale(.97);transition:.55s var(--ease);border-top:4px solid var(--gold)}
+#rm.on .card{transform:none}
+#rm .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--muted)}
+#rm h3{font-size:32px;color:var(--green);font-weight:600;margin-bottom:6px}
+#rm .sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.frm{display:grid;grid-template-columns:1fr 1fr;gap:18px}.frm .full{grid-column:1/-1}
+.frm label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.frm input,.frm select,.frm textarea{width:100%;padding:14px 16px;border:1px solid #DDD5C2;background:#fff;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:.3s;resize:vertical}
+.frm input:focus,.frm select:focus,.frm textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,161,77,.15)}
+.frm .btn{grid-column:1/-1;width:100%;margin-top:8px}
+.zn{display:flex;gap:10px;flex-wrap:wrap}.zn label{flex:1;min-width:110px;margin:0;cursor:pointer}
+.zn input{position:absolute;opacity:0;width:0;height:0}.zn span{display:block;text-align:center;padding:13px 8px;border:1px solid #DDD5C2;background:#fff;font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);transition:.3s}
+.zn input:checked+span{background:var(--green);color:#fff;border-color:var(--green)}
+#rsu{text-align:center;display:none;padding:30px 0}
+#rsu .ok{width:84px;height:84px;border-radius:50%;background:var(--green);color:var(--gold-light);font-size:38px;display:flex;align-items:center;justify-content:center;margin:0 auto 26px;animation:pop .6s var(--ease)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+#rsu p{color:var(--muted);font-size:14px;line-height:1.8}
+@media(max-width:600px){#rm .card{padding:34px 22px}#rm h3{font-size:26px}.frm{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav id="nav"><div class="container nv">
 <a href="index.html" class="brand"><b>EDIA</b><span>Hotel · Spa · Sandanski</span></a>
-<div class="nl"><a href="index.html">Хотелът</a><a href="#galeria">Атмосфера</a><a href="#menu">Меню</a><a href="tel:+359746323300" class="cta">Резервирай маса</a></div>
+<div class="nl"><a href="index.html">Хотелът</a><a href="#galeria">Атмосфера</a><a href="#menu">Меню</a><a href="#" class="cta" onclick="openRes();return false">Резервирай маса</a></div>
 </div></nav>
 
 <header class="hero"><div class="container">
 <div class="eyebrow">Ресторант ЕДИА · Сандански</div>
 <h1>Вкусове под <em>вековните чинари</em></h1>
 <p>Прясна дива риба, морски дарове, грил на дървени въглища и българска кухня. В уютната зала или в лятната градина.</p>
-<div class="bt"><a href="#menu" class="btn">Разгледайте менюто</a><a href="tel:+359746323300" class="btn ghost">0746 3 23 00</a></div>
+<div class="bt"><a href="#menu" class="btn">Разгледайте менюто</a><a href="#" class="btn ghost" onclick="openRes();return false">Резервирай маса</a></div>
 </div><div class="scr">Scroll</div></header>
 
 <div class="facts"><div class="container fg">
@@ -341,12 +364,28 @@ body{font-size:16px}
 <section class="cta2"><div class="container rv">
 <div class="eyebrow">Резервации</div>
 <h2>Запазете вашата <em>маса</em></h2>
-<p>Обадете се и ще ви подготвим маса в залата или в градината. Препоръчваме резервация през уикенда.</p>
-<div class="bt"><a class="btn" href="tel:+359746323300" style="background:var(--green);color:#fff;border-color:var(--green)">0746 3 23 00</a><a class="btn ghost" href="index.html">Към хотела</a></div>
+<p>Изпратете запитване и ще ви подготвим маса в залата или в градината. Препоръчваме резервация през уикенда.</p>
+<div class="bt"><button type="button" class="btn" onclick="openRes()">Резервирай маса</button></div>
 </div></section>
 
-<footer><div class="container">© 2026 Family Hotel Edia · Околовръстен път №10, Сандански · <a href="tel:+359887333444">0887 33 34 44</a></div></footer>
+<footer><div class="container"><a href="index.html">← Хотел EDIA</a> · © 2026 Family Hotel Edia · Околовръстен път №10, Сандански · <a href="tel:+359887333444">0887 33 34 44</a></div></footer>
 
+<div id="rm"><div class="ovl" onclick="closeRes()"></div><div class="card">
+<button class="x" onclick="closeRes()" aria-label="Затвори">&#10005;</button>
+<div id="rfw"><h3>Резервация на маса</h3><p class="sub">Изпратете запитване и ще го потвърдим по телефон или имейл.</p>
+<form class="frm" id="rf">
+<div><label>Дата</label><input type="date" id="rdt" required></div>
+<div><label>Час</label><input type="time" required></div>
+<div><label>Брой гости</label><select><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>Над 10</option></select></div>
+<div><label>Повод</label><select><option>Обикновена вечеря</option><option>Романтична вечеря</option><option>Рожден ден</option><option>Семейно събиране</option><option>Бизнес вечеря</option></select></div>
+<div class="full"><label>Къде желаете да седнете</label><div class="zn"><label><input type="radio" name="z" checked><span>Без предпочитание</span></label><label><input type="radio" name="z"><span>Зала</span></label><label><input type="radio" name="z"><span>Лятна градина</span></label></div></div>
+<div class="full"><label>Име и фамилия</label><input type="text" placeholder="Иван Иванов" required></div>
+<div><label>Телефон</label><input type="tel" placeholder="+359 ..." required></div>
+<div><label>Имейл</label><input type="email" placeholder="ivan@mail.bg"></div>
+<div class="full"><label>Забележки (по желание)</label><textarea rows="2" placeholder="Алергии, детски стол, специално желание..."></textarea></div>
+<button class="btn" type="submit">Изпрати запитване</button></form></div>
+<div id="rsu"><div class="ok">&#10003;</div><h3>Благодарим ви!</h3><p>Запитването за маса е изпратено.<br>Ще се свържем с вас за потвърждение възможно най-скоро.</p><button class="btn" style="margin-top:26px;background:var(--green);color:#fff;border-color:var(--green)" onclick="closeRes()">Затвори</button></div>
+</div></div>
 <script>
 // ---- МЕНЮ: редактирайте само тук ----
 var IMG="https://edia.bg/img/";
@@ -398,10 +437,18 @@ document.getElementById("rnx").onclick=function(){rs(ri+1)};document.getElementB
 document.getElementById("rdots").onclick=function(e){var b=e.target.closest("button");if(b)rs(+b.dataset.i)};
 rs(0,1);
 var rw=document.querySelector(".rvw");rw.addEventListener("mouseenter",function(){clearTimeout(rt);document.getElementById("rbr").style.transition="none"});rw.addEventListener("mouseleave",function(){rs(ri,1)});
+
 // nav + reveal
 var nv=document.getElementById("nav");addEventListener("scroll",function(){nv.classList.toggle("sc",scrollY>60)},{passive:true});
 var io=new IntersectionObserver(function(a){a.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -5% 0px'});
 document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});setTimeout(function(){document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in")})},2500);
+</script>
+<script>
+var rm=document.getElementById("rm");
+function openRes(){document.getElementById("rfw").style.display="block";document.getElementById("rsu").style.display="none";document.getElementById("rdt").min=new Date().toISOString().slice(0,10);rm.classList.add("on");document.body.style.overflow="hidden"}
+function closeRes(){rm.classList.remove("on");document.body.style.overflow=""}
+document.getElementById("rf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block"});
+addEventListener("keydown",function(e){if(e.key==="Escape")closeRes()});
 </script>
 </body>
 </html>
