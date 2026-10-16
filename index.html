@@ -1133,5 +1133,50 @@ function closeRes(){rm.classList.remove("on");document.body.style.overflow=""}
 document.getElementById("rf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block"});
 addEventListener("keydown",function(e){if(e.key==="Escape")closeRes()});
 </script>
+<style id="ckcss">
+#ck{position:fixed;left:20px;bottom:20px;z-index:2500;width:min(380px,calc(100% - 40px));background:#fff;border:1px solid #C9A45C;box-shadow:0 24px 60px rgba(9,35,46,.28);padding:16px 20px;font:400 12.5px/1.6 'Manrope',sans-serif;color:#1C2B28;transform:translateY(30px);opacity:0;visibility:hidden;transition:.6s cubic-bezier(.22,1,.36,1)}
+#ck.on{transform:none;opacity:1;visibility:visible}
+#ck::before{content:"";position:absolute;inset:4px;border:1px solid rgba(201,164,92,.3);pointer-events:none}
+#ck b{display:block;font:500 11px 'Cinzel',serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A45C;margin-bottom:8px}
+#ck p{margin:0 0 16px;color:#5F6E6A}
+#ck .r{display:flex;gap:10px;flex-wrap:wrap}
+#ck button{cursor:pointer;font:700 10.5px 'Manrope',sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:12px 18px;border:1px solid #C9A45C;transition:.3s}
+#ck .y{background:linear-gradient(135deg,#E0C689,#C9A45C);color:#09232E}
+#ck .y:hover{box-shadow:0 8px 18px rgba(201,164,92,.4)}
+#ck .n{background:#fff;color:#17495E}
+#ck .n:hover{background:#F8F5EE}
+@media(max-width:600px){#ck{left:10px;right:10px;bottom:10px;width:auto;padding:18px}}
+</style>
+<div id="ck" role="dialog" aria-label="Бисквитки"><b>Бисквитки</b><p>Мерим анонимно посещенията, за да подобряваме сайта. С вашето съгласие запазваме по-пълна статистика.</p><div class="r"><button type="button" class="y" id="ck-y">Приемам</button><button type="button" class="n" id="ck-n">Само необходими</button></div></div>
+<script id="gajs">
+(function(){try{
+var ID="G-8KBVC40LRP",K="edia_cookie_consent",bn=document.getElementById("ck"),NEED_CONSENT=false;
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};
+function get(){try{return localStorage.getItem(K)}catch(e){return null}}
+function set(v){try{localStorage.setItem(K,v)}catch(e){}}
+var c=get();
+gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:(!NEED_CONSENT||c==="yes")?"granted":"denied"});
+gtag("js",new Date());gtag("config",ID);
+var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);
+if(NEED_CONSENT&&!c){setTimeout(function(){bn.classList.add("on")},2500)}
+document.getElementById("ck-y").addEventListener("click",function(){set("yes");bn.classList.remove("on");gtag("consent","update",{analytics_storage:"granted"})});
+document.getElementById("ck-n").addEventListener("click",function(){set("no");bn.classList.remove("on");gtag("consent","update",{analytics_storage:"denied"})});
+function ev(n,p){try{gtag("event",n,p||{})}catch(e){}}
+function kind(t){return /openRes/.test(t)?"restaurant":/openSpa/.test(t)?"spa":/openRoom/.test(t)?"room":/openModal/.test(t)?"hotel":""}
+document.addEventListener("click",function(e){try{
+ var a=e.target.closest("a,button");if(!a)return;
+ var oc=a.getAttribute("onclick")||"",h=a.getAttribute("href")||"",k=kind(oc);
+ if(k){ev("begin_reservation",{reservation_type:k,link_text:(a.textContent||"").trim().slice(0,40)});return}
+ if(/^tel:/.test(h)){ev("click_phone",{phone:h.replace("tel:","")});return}
+ if(/google\.com\/maps/.test(h)){ev("click_directions",{});return}
+ if(/(stai|spa|restoran)\.html/.test(h)){ev("select_content",{content_type:"page",item_id:h})}
+}catch(x){}},true);
+document.addEventListener("submit",function(e){try{
+ var f=e.target,id=f.id||"";
+ var t=id==="rf"?(document.getElementById("sact")?"spa":"restaurant"):(id==="bform"?"hotel":"room");
+ ev("generate_lead",{form_type:t});
+}catch(x){}},true);
+}catch(x){}})();
+</script>
 </body>
 </html>
