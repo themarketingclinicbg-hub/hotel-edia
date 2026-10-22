@@ -545,7 +545,7 @@ function openRes(){document.getElementById("rfw").style.display="block";document
 function closeRes(){rm.classList.remove("on");document.body.style.overflow=""}
 // ---- Резервации (ресторант / спа): валидация + изпращане на имейл ----
 (function(){
-var EP="https://formsubmit.co/ajax/hotelediabg@gmail.com",f=document.getElementById("rf");if(!f)return;
+var EP="https://formsubmit.co/ajax/d42ff52b81865bd0d18cb7e844d4b5a1",f=document.getElementById("rf");if(!f)return;
 var TYPE=document.getElementById("sact")?"Спа":"Ресторант";
 f.setAttribute("novalidate","");
 var btn=f.querySelector('button[type=submit]'),btxt=btn.textContent,err=document.createElement("p");
@@ -579,10 +579,10 @@ f.addEventListener("submit",function(e){e.preventDefault();
  btn.disabled=true;btn.textContent="Изпращане...";
  fetch(EP,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
  .then(function(r){return r.json()}).then(function(j){
-  if(!(j&&(j.success===true||j.success==="true")))throw 0;
+  if(!(j&&(j.success===true||j.success==="true"))){console.error("FormSubmit:",j);throw 0}
   document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block";f.reset();
   try{if(window.gtag)gtag("event","generate_lead",{form_type:TYPE==="Спа"?"spa":"restaurant"})}catch(x){}
- }).catch(function(){show("Запитването не можа да бъде изпратено. Моля, опитайте отново или се обадете на 0887 33 34 44.",[])})
+ }).catch(function(x){if(x)console.error("FormSubmit:",x);show("Запитването не можа да бъде изпратено. Моля, опитайте отново или се обадете на 0887 33 34 44.",[])})
  .then(function(){btn.disabled=false;btn.textContent=btxt});
 });
 })();
