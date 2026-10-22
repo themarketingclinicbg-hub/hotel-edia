@@ -1130,7 +1130,49 @@ if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].is
 var rm=document.getElementById("rm");
 function openRes(){document.getElementById("rfw").style.display="block";document.getElementById("rsu").style.display="none";document.getElementById("rdt").min=new Date().toISOString().slice(0,10);rm.classList.add("on");document.body.style.overflow="hidden"}
 function closeRes(){rm.classList.remove("on");document.body.style.overflow=""}
-document.getElementById("rf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block"});
+// ---- Резервации (ресторант / спа): валидация + изпращане на имейл ----
+(function(){
+var EP="https://formsubmit.co/ajax/hotelediabg@gmail.com",f=document.getElementById("rf");if(!f)return;
+var TYPE=document.getElementById("sact")?"Спа":"Ресторант";
+f.setAttribute("novalidate","");
+var btn=f.querySelector('button[type=submit]'),btxt=btn.textContent,err=document.createElement("p");
+err.className="ferr";err.setAttribute("role","alert");err.style.display="none";f.insertBefore(err,btn);
+var em=f.querySelector('input[type=email]');em.required=true;em.placeholder="ivan@mail.bg";
+function lab(c){var d=c.closest("div"),l=d&&d.querySelector("label");return l?l.textContent.trim():""}
+function today(){var d=new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+function fmt(v){var p=v.split("-"),D=new Date(+p[0],+p[1]-1,+p[2]);return p[2]+"."+p[1]+"."+p[0]+" ("+["неделя","понеделник","вторник","сряда","четвъртък","петък","събота"][D.getDay()]+")"}
+function show(m,els){err.textContent=m;err.style.display="block";els.forEach(function(c){c.classList.add("er")});if(els[0]){els[0].focus({preventScroll:true});els[0].scrollIntoView({block:"center",behavior:"smooth"})}}
+f.addEventListener("input",function(e){e.target.classList.remove("er");if(!f.querySelector(".er"))err.style.display="none"});
+f.addEventListener("submit",function(e){e.preventDefault();
+ err.style.display="none";f.querySelectorAll(".er").forEach(function(c){c.classList.remove("er")});
+ var miss=[],els=[];
+ f.querySelectorAll("[required]").forEach(function(c){if(!(c.value||"").trim()){miss.push(lab(c));els.push(c)}});
+ if(miss.length){show("Моля, попълнете задължителните полета: "+miss.join(", ")+".",els);return}
+ var dt=f.querySelector('input[type=date]'),tm=f.querySelector('input[type=time]'),nm=f.querySelector('input[type=text]'),tl=f.querySelector('input[type=tel]');
+ if(dt.value<today()){show("Моля, изберете дата от днес нататък.",[dt]);return}
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){show("Моля, въведете валиден имейл адрес.",[em]);return}
+ if(tl.value.replace(/\D/g,"").length<7){show("Моля, въведете валиден телефонен номер.",[tl]);return}
+ var d={};
+ d["Вид резервация"]=TYPE;
+ d["Име и фамилия"]=nm.value.trim();d["Телефон"]=tl.value.trim();d["email"]=em.value.trim();
+ d["Дата"]=fmt(dt.value);d["Час"]=tm.value;
+ f.querySelectorAll("select").forEach(function(s){d[lab(s)]=s.selectedOptions[0].textContent.trim()});
+ var rd=f.querySelector("input[type=radio]:checked");if(rd){var zl=rd.closest(".full");d[(zl&&zl.querySelector("label").textContent.trim())||"Място"]=rd.parentNode.querySelector("span").textContent.trim()}
+ var ta=f.querySelector("textarea");d["Забележки"]=(ta&&ta.value.trim())||"-";
+ d["Страница"]=location.href.replace(/[?#].*$/,"");d["Изпратено на"]=new Date().toLocaleString("bg-BG");
+ d["_subject"]="Нова резервация: "+TYPE+", "+fmt(dt.value).split(" ")[0]+" "+tm.value+", "+nm.value.trim();
+ d["_template"]="table";d["_captcha"]="false";d["_honey"]="";
+ d["_autoresponse"]="Здравейте! Получихме вашето запитване от сайта на Family Hotel Edia. Ще се свържем с вас за потвърждение. Телефон за връзка: 0887 33 34 44.";
+ btn.disabled=true;btn.textContent="Изпращане...";
+ fetch(EP,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
+ .then(function(r){return r.json()}).then(function(j){
+  if(!(j&&(j.success===true||j.success==="true")))throw 0;
+  document.getElementById("rfw").style.display="none";document.getElementById("rsu").style.display="block";f.reset();
+  try{if(window.gtag)gtag("event","generate_lead",{form_type:TYPE==="Спа"?"spa":"restaurant"})}catch(x){}
+ }).catch(function(){show("Запитването не можа да бъде изпратено. Моля, опитайте отново или се обадете на 0887 33 34 44.",[])})
+ .then(function(){btn.disabled=false;btn.textContent=btxt});
+});
+})();
 addEventListener("keydown",function(e){if(e.key==="Escape")closeRes()});
 </script>
 <style id="ckcss">
@@ -1146,6 +1188,8 @@ addEventListener("keydown",function(e){if(e.key==="Escape")closeRes()});
 #ck .n{background:#fff;color:#17495E}
 #ck .n:hover{background:#F8F5EE}
 @media(max-width:600px){#ck{left:10px;right:10px;bottom:10px;width:auto;padding:18px}}
+.frm .er{border-color:#B3261E!important;box-shadow:0 0 0 3px rgba(179,38,30,.13)!important}
+.frm .ferr{grid-column:1/-1;margin:0;padding:12px 16px;background:#FDECEA;border-left:3px solid #B3261E;color:#8C1D18;font-size:13px;line-height:1.5}
 </style>
 <div id="ck" role="dialog" aria-label="Бисквитки"><b>Бисквитки</b><p>Мерим анонимно посещенията, за да подобряваме сайта. С вашето съгласие запазваме по-пълна статистика.</p><div class="r"><button type="button" class="y" id="ck-y">Приемам</button><button type="button" class="n" id="ck-n">Само необходими</button></div></div>
 <script id="gajs">
@@ -1174,7 +1218,7 @@ document.addEventListener("click",function(e){try{
 document.addEventListener("submit",function(e){try{
  var f=e.target,id=f.id||"";
  var t=id==="rf"?(document.getElementById("sact")?"spa":"restaurant"):(id==="bform"?"hotel":"room");
- ev("generate_lead",{form_type:t});
+ if(id!=="rf")ev("generate_lead",{form_type:t});
 }catch(x){}},true);
 }catch(x){}})();
 </script>
